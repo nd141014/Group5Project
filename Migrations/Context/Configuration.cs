@@ -9,8 +9,9 @@ namespace Group5Project.Migrations.Context
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"Migrations\Context";
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Group5Project.DAL.Context context)
