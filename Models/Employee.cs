@@ -10,29 +10,29 @@ namespace Group5Project.Models
     {
         public int employeeID { get; set; }
 
-        [Display (Name="Employee First Name")]
-        [Required (ErrorMessage ="Employee First Name is Required")]
+        [Display (Name="First Name")]
+        [Required (ErrorMessage ="First Name is Required")]
         [StringLength(50)]
         public  string  employeeFirstName { get; set; }
 
-        [Display(Name = "Employee Last Name")]
-        [Required(ErrorMessage = "Employee Last Name is Required")]
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Last Name is Required")]
         [StringLength(50)]
         public string employeeLastName { get; set; }
 
-        [Display(Name = "Employee Business Unit")]
-        [Required(ErrorMessage = "Employee Business Unit is Required")]
+        [Display(Name = "Business Unit")]
+        [Required(ErrorMessage = "Business Unit is Required")]
         [StringLength(50)]
         public string employeeBusinessUnit { get; set; }
 
-        [Display(Name = "Employee Hire Date")]
-        [Required(ErrorMessage = "Employee Hire Date is Required")]
+        [Display(Name = "Hire Date")]
+        [Required(ErrorMessage = "Hire Date is Required. Please enter date as dd/mm/yyyy.")]
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString ="{0:d}",ApplyFormatInEditMode =true)]
         public DateTime employeeHireDate { get; set; }
 
-        [Display(Name = "Employee Title")]
-        [Required(ErrorMessage = "Employee Title is Required")]
+        [Display(Name = "Job Title")]
+        [Required(ErrorMessage = "Job Title is Required")]
         [StringLength(50)]
         public string employeeTitle{ get; set; }
 

@@ -4,8 +4,8 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
-
+<h2>Edit an Employee</h2>
+<div class="alert alert-warning"> <h3>Are you sure you want to edit this employee?</h3> </div>
 
 @using (Html.BeginForm())
 {
@@ -59,7 +59,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-warning" />
             </div>
         </div>
     </div>
