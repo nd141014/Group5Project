@@ -20,5 +20,9 @@ namespace Group5Project.DAL
         {
             base.OnModelCreating(modelBuilder);
         }
+
+        public System.Data.Entity.DbSet<Group5Project.Models.Recognition> Recognitions { get; set; }
+
+        public System.Data.Entity.DbSet<Group5Project.Models.CoreValues> CoreValues { get; set; }
     }
 }

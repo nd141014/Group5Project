@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Group5Project.Models.Recognition>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.emloyeeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.coreValueName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.recognitionDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.recognitionPoints)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.employeeID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.emloyeeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.coreValueName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.recognitionDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.recognitionPoints)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.employeeID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.recognitionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.recognitionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.recognitionId })
+        </td>
+    </tr>
+}
+
+</table>

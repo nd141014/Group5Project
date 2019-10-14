@@ -1,0 +1,58 @@
+﻿@model Group5Project.Models.Recognition
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Recognition</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.emloyeeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emloyeeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.coreValueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.coreValueName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.recognitionDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.recognitionDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.recognitionPoints)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.recognitionPoints)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.employeeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.employeeID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.recognitionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
