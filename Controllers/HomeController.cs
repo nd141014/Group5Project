@@ -13,6 +13,11 @@ namespace Group5Project.Controllers
             return View();
         }
 
+        public ActionResult CoreValues()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
