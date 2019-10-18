@@ -36,6 +36,7 @@ namespace Group5Project.Models
         [StringLength(50)]
         public string employeeTitle{ get; set; }
 
+        public ICollection<Recognition> Recognition { get; set; }
 
     }
 }
