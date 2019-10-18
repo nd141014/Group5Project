@@ -8,39 +8,93 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    @*<title>Bootstrap Theme Company Page</title>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Centric Consulting", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a class="navbar-brand" href="#myPage">Logo</a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Core Values", "CoreValues", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Employee List", "Index", "Employees")</li>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#portfolio">PORTFOLIO</a></li>
+                    <li><a href="#pricing">PRICING</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
+    </nav>
+    @RenderBody()
+    <hr />
+    <footer>
+        <p> &copy; @DateTime.Now.Year - Centric Consulting Team 5</p>
+    </footer>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Group 5 Project</p>
-        </footer>
-    </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    
+
+    
+
 </body>
-</html>
+</html>*@
+
+
+
+
+
+</head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Centric Consulting", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Core Values", "CoreValues", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Employee List", "Index", "Employees")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Group 5 Project</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>
