@@ -8,7 +8,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    @*<title>Bootstrap Theme Company Page</title>
+    <title>Bootstrap Theme Company Page</title>
     <meta charset="utf-8">
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -23,21 +23,22 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+        @Html.ActionLink("Centric Consulting", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 <a class="navbar-brand" href="#myPage">Logo</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#services">SERVICES</a></li>
-                    <li><a href="#portfolio">PORTFOLIO</a></li>
-                    <li><a href="#pricing">PRICING</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Core Values", "CoreValues", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Employee List", "Index", "Employees")</li>
                 </ul>
+        @Html.Partial("_LoginPartial")
             </div>
         </div>
     </nav>
@@ -56,13 +57,13 @@
     
 
 </body>
-</html>*@
+</html>
 
 
 
 
 
-</head>
+@*</head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -97,4 +98,4 @@
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
     </body>
-    </html>
+    </html>*@
