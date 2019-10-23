@@ -255,6 +255,11 @@
     <Content Include="Views\Values\Details.cshtml" />
     <Content Include="Views\Values\Edit.cshtml" />
     <Content Include="Views\Values\Index.cshtml" />
+    <Content Include="Views\Recognitions\Create.cshtml" />
+    <Content Include="Views\Recognitions\Delete.cshtml" />
+    <Content Include="Views\Recognitions\Details.cshtml" />
+    <Content Include="Views\Recognitions\Edit.cshtml" />
+    <Content Include="Views\Recognitions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
