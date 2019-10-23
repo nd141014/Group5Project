@@ -17,8 +17,17 @@ namespace Group5Project.Models
         public string emloyeeID { get; set; }
         public virtual Employee Employee { get; set; }
 
-        public enum CoreValue { Excellence = 1, Integrity = 2, Stewardship = 3, Innovate = 4, Balance = 5, Culture = 6 }
+        public enum CoreValue
+        { Excellence = 1,
+            Integrity = 2,
+            Stewardship = 3,
+            Innovate = 4,
+           [Display(Name = "Leads a balanced life")] Balance = 5,
+            Culture = 6
+        }
         public CoreValue RecognitionValue { get; set; }
+
+
         [Display(Name = "Recognition Description")]
         [Required(ErrorMessage = "Description is Required")]
         [StringLength(500)]
