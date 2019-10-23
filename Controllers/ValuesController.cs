@@ -11,17 +11,17 @@ using Group5Project.Models;
 
 namespace Group5Project.Controllers
 {
-    public class CoreValuesController : Controller
+    public class ValuesController : Controller
     {
         private Context db = new Context();
 
-        // GET: CoreValues
+        // GET: Values
         public ActionResult Index()
         {
             return View(db.CoreValues.ToList());
         }
 
-        // GET: CoreValues/Details/5
+        // GET: Values/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,13 +36,13 @@ namespace Group5Project.Controllers
             return View(coreValues);
         }
 
-        // GET: CoreValues/Create
+        // GET: Values/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: CoreValues/Create
+        // POST: Values/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -59,7 +59,7 @@ namespace Group5Project.Controllers
             return View(coreValues);
         }
 
-        // GET: CoreValues/Edit/5
+        // GET: Values/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -74,7 +74,7 @@ namespace Group5Project.Controllers
             return View(coreValues);
         }
 
-        // POST: CoreValues/Edit/5
+        // POST: Values/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -90,7 +90,7 @@ namespace Group5Project.Controllers
             return View(coreValues);
         }
 
-        // GET: CoreValues/Delete/5
+        // GET: Values/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,7 +105,7 @@ namespace Group5Project.Controllers
             return View(coreValues);
         }
 
-        // POST: CoreValues/Delete/5
+        // POST: Values/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
