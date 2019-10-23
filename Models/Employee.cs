@@ -20,10 +20,19 @@ namespace Group5Project.Models
         [StringLength(50)]
         public string employeeLastName { get; set; }
 
+        
+
+        public enum BusinessUnit
+        {
+            Marketing = 1,
+            IT = 2,
+            HR = 3
+        }
+
         [Display(Name = "Business Unit")]
         [Required(ErrorMessage = "Business Unit is Required")]
         [StringLength(50)]
-        public string employeeBusinessUnit { get; set; }
+        public BusinessUnit employeeBusinessUnit { get; set; }
 
         [Display(Name = "Hire Date")]
         [Required(ErrorMessage = "Hire Date is Required. Please enter date as dd/mm/yyyy.")]

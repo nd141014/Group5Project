@@ -18,12 +18,13 @@ namespace Group5Project.Models
         public virtual Employee Employee { get; set; }
 
         public enum CoreValue
-        { Excellence = 1,
-            Integrity = 2,
-            Stewardship = 3,
-            Innovate = 4,
-           [Display(Name = "Leads a balanced life")] Balance = 5,
-            Culture = 6
+        { 
+            [Display(Name = "Commit to Delivery Excellence")] Excellence = 1,
+            [Display(Name = "Embrace Integrity and Openness")] Integrity = 2,
+            [Display(Name = "Practice Responsible Stewardship")] Stewardship = 3,
+            [Display(Name = "Ignite Passion for the Greater Good")] Good = 4,
+            [Display(Name = "Invest in an Exceptional Culture")] Culture = 5,
+            [Display(Name = "Strive to Innovate")] Innovate = 6
         }
         public CoreValue RecognitionValue { get; set; }
 
