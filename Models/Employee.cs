@@ -31,7 +31,7 @@ namespace Group5Project.Models
 
         [Display(Name = "Business Unit")]
         [Required(ErrorMessage = "Business Unit is Required")]
-        [StringLength(50)]
+      
         public BusinessUnit employeeBusinessUnit { get; set; }
 
         [Display(Name = "Hire Date")]
