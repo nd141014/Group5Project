@@ -136,7 +136,7 @@ h4 {
 }
 
 .panel-footer {
-    background-color: white !important;
+    background-color: #ffb366;
 }
 
     .panel-footer h3 {
@@ -150,8 +150,8 @@ h4 {
 
     .panel-footer .btn {
         margin: 15px 0;
-        background-color: #f4511e;
-        color: #fff;
+        background-color: #ffb366;
+        color: #ffb366;
     }
 
 .navbar {
@@ -167,7 +167,7 @@ h4 {
 }
 
     .navbar li a, .navbar .navbar-brand {
-        color: #fff !important;
+        color: white;
     }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
