@@ -17,12 +17,18 @@ namespace Group5Project.Models
         public string emloyeeID { get; set; }
         public virtual Employee Employee { get; set; }
 
-        [Display(Name = "Core Value")]
-        [Required(ErrorMessage = "Core Value is Required")]
-        [StringLength(50)]
-        
-        public string coreValueName { get; set; }
-        public virtual CoreValues CoreValues { get; set; }
+        public enum CoreValue
+        { 
+            [Display(Name = "Commit to Delivery Excellence")] Excellence = 1,
+            [Display(Name = "Embrace Integrity and Openness")] Integrity = 2,
+            [Display(Name = "Practice Responsible Stewardship")] Stewardship = 3,
+            [Display(Name = "Ignite Passion for the Greater Good")] Good = 4,
+            [Display(Name = "Invest in an Exceptional Culture")] Culture = 5,
+            [Display(Name = "Strive to Innovate")] Innovate = 6
+        }
+        public CoreValue RecognitionValue { get; set; }
+
+
         [Display(Name = "Recognition Description")]
         [Required(ErrorMessage = "Description is Required")]
         [StringLength(500)]

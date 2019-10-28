@@ -47,7 +47,7 @@ namespace Group5Project.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "recognitionId,emloyeeID,coreValueName,recognitionDescription,recognitionPoints,employeeID")] Recognition recognition)
+        public ActionResult Create([Bind(Include = "recognitionId,emloyeeID,RecognitionValue,recognitionDescription,recognitionPoints,employeeID")] Recognition recognition)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace Group5Project.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "recognitionId,emloyeeID,coreValueName,recognitionDescription,recognitionPoints,employeeID")] Recognition recognition)
+        public ActionResult Edit([Bind(Include = "recognitionId,emloyeeID,RecognitionValue,recognitionDescription,recognitionPoints,employeeID")] Recognition recognition)
         {
             if (ModelState.IsValid)
             {

@@ -15,10 +15,25 @@ namespace Group5Project.Controllers
     {
         private Context db = new Context();
 
+
+
         // GET: Employees
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             return View(db.Employees.ToList());
+         
+            {
+                var testusers = from u in db.Employees select u;
+                if (!string.IsNullOrEmpty(searchString))
+                {
+                    testusers = testusers.Where(u => u.employeeLastName.Contains(searchString)
+                        || u.employeeFirstName.Contains(searchString));
+                    return View(testusers.ToList());
+                }
+                return View(db.Employees.ToList());
+            }
+        
+
         }
 
         // GET: Employees/Details/5
