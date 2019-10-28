@@ -20,7 +20,7 @@ namespace Group5Project.Controllers
         // GET: Employees
         public ActionResult Index(string searchString)
         {
-            return View(db.Employees.ToList());
+            
          
             {
                 var testusers = from u in db.Employees select u;
@@ -32,7 +32,6 @@ namespace Group5Project.Controllers
                 }
                 return View(db.Employees.ToList());
             }
-        
 
         }
 
