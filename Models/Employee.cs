@@ -8,7 +8,8 @@ namespace Group5Project.Models
 {
     public class Employee
     {
-        public int employeeID { get; set; }
+        [Key]
+        public Guid employeeID { get; set; }
 
         [Display (Name="First Name")]
         [Required (ErrorMessage ="First Name is Required")]
@@ -24,9 +25,19 @@ namespace Group5Project.Models
 
         public enum BusinessUnit
         {
-            Marketing = 1,
-            IT = 2,
-            HR = 3
+            Boston = 1,
+            Charlotte = 2,
+            Chicago = 3,
+            Cincinnati = 4,
+            Cleveland = 5,
+            Columbus = 6,
+            India = 7,
+            Indianapolis = 8,
+            Louisville = 9,
+            Miami = 10,
+            Seattle = 11,
+            StLouis = 12,
+            Tampa = 13
         }
 
         [Display(Name = "Business Unit")]

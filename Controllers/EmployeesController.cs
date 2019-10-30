@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Group5Project.DAL;
 using Group5Project.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Group5Project.Controllers
 {
@@ -65,6 +66,9 @@ namespace Group5Project.Controllers
         {
             if (ModelState.IsValid)
             {
+                Guid employeeID;
+                Guid.TryParse(User.Identity.GetUserId(), out employeeID);
+                employee.employeeID = employeeID;
                 db.Employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");
