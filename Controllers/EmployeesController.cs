@@ -12,6 +12,8 @@ using Microsoft.AspNet.Identity;
 
 namespace Group5Project.Controllers
 {
+    [Authorize]
+
     public class EmployeesController : Controller
     {
         private Context db = new Context();
@@ -78,18 +80,34 @@ namespace Group5Project.Controllers
         }
 
         // GET: Employees/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(Guid? id)
         {
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = db.Employees.Find(id);
-            if (employee == null)
+            Employee user = db.Employees.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            Guid employeeID;
+            Guid.TryParse(User.Identity.GetUserId(), out employeeID);
+            if (id == employeeID)
+            {
+                return View(user);
+            }
+            else
+            {
+                return View("NotAuthenticated");
+            }
+
+
+
+
+
+            
         }
 
         // POST: Employees/Edit/5

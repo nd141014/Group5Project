@@ -6,6 +6,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Group5Project.Models
 {
+   
+
     public class Employee
     {
         [Key]

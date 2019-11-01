@@ -11,6 +11,8 @@ using Group5Project.Models;
 
 namespace Group5Project.Controllers
 {
+    [Authorize]
+
     public class RecognitionsController : Controller
     {
         private Context db = new Context();
