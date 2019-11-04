@@ -207,7 +207,7 @@
     <Content Include="images\Louisville.jfif" />
     <Content Include="images\Miami.jfif" />
     <Content Include="images\StLouis.jfif" />
-    <Content Include="images\Tampa.jfif" />
+    <Content Include="images\Tampa2.jfif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
