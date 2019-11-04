@@ -196,6 +196,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\boston.jfif" />
+    <Content Include="images\Charlotte.jfif" />
+    <Content Include="images\cincinnati.jpg" />
+    <Content Include="images\Cleveland.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
