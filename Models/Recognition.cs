@@ -14,7 +14,7 @@ namespace Group5Project.Models
         [Display(Name = "Recognized Employee")]
         [Required(ErrorMessage = "Employee Name is Required")]
         [StringLength(50)]
-        public string emloyeeID { get; set; }
+        public Guid employeeID { get; set; }
         public virtual Employee Employee { get; set; }
 
         public enum CoreValue
@@ -40,8 +40,8 @@ namespace Group5Project.Models
         public int recognitionPoints { get; set; }
         [Display(Name = "Submitting Employee")]
         [Required(ErrorMessage = "Submitting Employee is Required")]
-        [StringLength(50)]
-        public string employeeID { get; set; }
+        
+        public Guid RecognizeeEmployeeID { get; set; }
         
     }
 }

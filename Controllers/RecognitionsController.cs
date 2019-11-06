@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Group5Project.DAL;
 using Group5Project.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Group5Project.Controllers
 {
@@ -24,7 +25,7 @@ namespace Group5Project.Controllers
         }
 
         // GET: Recognitions/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(Guid? id)
         {
             if (id == null)
             {
@@ -41,6 +42,8 @@ namespace Group5Project.Controllers
         // GET: Recognitions/Create
         public ActionResult Create()
         {
+            var employees = db.Employees.OrderBy(c => c.employeeLastName).ThenBy(c => c.employeeFirstName);
+            ViewBag.employeeID = new SelectList(db.Employees, "employeeID", "employeeLastName");
             return View();
         }
 
@@ -49,20 +52,25 @@ namespace Group5Project.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "recognitionId,emloyeeID,RecognitionValue,recognitionDescription,recognitionPoints,employeeID")] Recognition recognition)
+        public ActionResult Create([Bind(Include = "recognitionId,employeeID,RecognitionValue,recognitionDescription,recognitionPoints,RecognizeeEmployeeID")] Recognition recognition)
         {
             if (ModelState.IsValid)
             {
+                Guid employeeID;
+                Guid.TryParse(User.Identity.GetUserId(), out employeeID);
+                recognition.RecognizeeEmployeeID = employeeID;
                 db.Recognitions.Add(recognition);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
+            //var employees = db.Employees.OrderBy(c => c.employeeLastName).ThenBy(c => c.employeeFirstName);
+            ViewBag.employeeID = new SelectList(db.Employees, "employeeID", "employeeLastName");
             return View(recognition);
         }
 
         // GET: Recognitions/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
@@ -81,7 +89,7 @@ namespace Group5Project.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "recognitionId,emloyeeID,RecognitionValue,recognitionDescription,recognitionPoints,employeeID")] Recognition recognition)
+        public ActionResult Edit([Bind(Include = "recognitionId,employeeID,RecognitionValue,recognitionDescription,recognitionPoints,RecognizeeEmployeeID")] Recognition recognition)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +101,7 @@ namespace Group5Project.Controllers
         }
 
         // GET: Recognitions/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
@@ -110,7 +118,7 @@ namespace Group5Project.Controllers
         // POST: Recognitions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(Guid id)
         {
             Recognition recognition = db.Recognitions.Find(id);
             db.Recognitions.Remove(recognition);
