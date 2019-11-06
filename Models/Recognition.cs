@@ -13,7 +13,7 @@ namespace Group5Project.Models
 
         [Display(Name = "Recognized Employee")]
         [Required(ErrorMessage = "Employee Name is Required")]
-        [StringLength(50)]
+        
         public Guid employeeID { get; set; }
         public virtual Employee Employee { get; set; }
 

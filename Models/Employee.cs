@@ -11,6 +11,7 @@ namespace Group5Project.Models
     public class Employee
     {
         [Key]
+        
         public Guid employeeID { get; set; }
 
         [Display (Name="First Name")]
@@ -22,7 +23,11 @@ namespace Group5Project.Models
         [Required(ErrorMessage = "Last Name is Required")]
         [StringLength(50)]
         public string employeeLastName { get; set; }
+        [Display(Name = "Employee Full Name")]
+        
+        
 
+        public string fullEmployeeName { get { return employeeLastName + ", " + employeeFirstName; } }
         
 
         public enum BusinessUnit
