@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.emloyeeID)
+            @Html.DisplayNameFor(model => model.Employee.fullEmployeeName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.RecognitionValue)
@@ -24,7 +24,7 @@
             @Html.DisplayNameFor(model => model.recognitionPoints)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.employeeID)
+            @Html.DisplayNameFor(model => model.RecognizeeEmployeeID)
         </th>
         <th></th>
     </tr>
@@ -32,7 +32,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.emloyeeID)
+            @Html.DisplayFor(modelItem => item.Employee.fullEmployeeName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.RecognitionValue)
@@ -44,12 +44,12 @@
             @Html.DisplayFor(modelItem => item.recognitionPoints)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.employeeID)
+            @Html.DisplayFor(modelItem => item.RecognizeeEmployeeID)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.recognitionId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.recognitionId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.recognitionId })
+           
+            @Html.ActionLink("Details", "Details", new { id=item.recognitionId }) 
+            
         </td>
     </tr>
 }
