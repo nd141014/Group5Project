@@ -197,6 +197,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\Boston.jfif" />
+    <Content Include="images\Capture.PNG" />
+    <Content Include="images\centric_logo_color.jpg" />
     <Content Include="images\Charlotte.jfif" />
     <Content Include="images\Chicago.jfif" />
     <Content Include="images\Cincinnati.jfif" />
