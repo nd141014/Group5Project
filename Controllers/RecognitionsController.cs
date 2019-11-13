@@ -42,8 +42,8 @@ namespace Group5Project.Controllers
         // GET: Recognitions/Create
         public ActionResult Create()
         {
-            var employees = db.Employees.OrderBy(c => c.employeeLastName).ThenBy(c => c.employeeFirstName);
-            ViewBag.employeeID = new SelectList(db.Employees, "employeeID", "employeeLastName");
+            var employees = db.Employees.OrderBy(c => c.employeeLastName);
+            ViewBag.employeeID = new SelectList(db.Employees, "employeeID", "fullEmployeeName");
             return View();
         }
 

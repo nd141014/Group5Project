@@ -12,16 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Employee.fullEmployeeName)
+            Recognized Employee
         </th>
         <th>
             @Html.DisplayNameFor(model => model.RecognitionValue)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.recognitionDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.recognitionPoints)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.RecognizeeEmployeeID)
@@ -41,16 +38,9 @@
             @Html.DisplayFor(modelItem => item.recognitionDescription)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.recognitionPoints)
+            @Html.DisplayFor(modelItem => item.RecognizingEmployee.fullEmployeeName)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecognizeeEmployeeID)
-        </td>
-        <td>
-           
-            @Html.ActionLink("Details", "Details", new { id=item.recognitionId }) 
-            
-        </td>
+        
     </tr>
 }
 
