@@ -21,7 +21,11 @@ namespace Group5Project.Controllers
         // GET: Recognitions
         public ActionResult Index()
         {
-            return View(db.Recognitions.ToList());
+            var EData = db.Recognitions.Include(e => e.Employee).Include(e=>e.RecognizingEmployee).ToList();
+
+            return View(EData);
+
+
         }
 
         // GET: Recognitions/Details/5
