@@ -16,7 +16,8 @@ namespace Group5Project.Models
         [Required(ErrorMessage = "Employee Name is Required")]
         
         public Guid employeeID { get; set; }
-        public virtual Employee Employee { get; set; }
+        [ForeignKey("employeeID")]
+        public virtual Employee Awardee { get; set; }
         
         public enum CoreValue
         {

@@ -21,7 +21,7 @@ namespace Group5Project.Controllers
         // GET: Recognitions
         public ActionResult Index()
         {
-            var EData = db.Recognitions.Include(e => e.Employee).Include(e=>e.RecognizingEmployee).ToList();
+            var EData = db.Recognitions.Include(e => e.RecognizingEmployee).Include(e => e.Awardee).ToList();
 
             return View(EData);
 
@@ -46,8 +46,14 @@ namespace Group5Project.Controllers
         // GET: Recognitions/Create
         public ActionResult Create()
         {
-            var employees = db.Employees.OrderBy(c => c.employeeLastName);
-            ViewBag.employeeID = new SelectList(db.Employees, "employeeID", "fullEmployeeName");
+            //var employees = db.Employees.OrderBy(c => c.employeeLastName);
+            //ViewBag.employeeID = new SelectList(db.Employees, "employeeID", "fullEmployeeName");
+
+            string empID = User.Identity.GetUserId();
+            SelectList employees = new SelectList(db.Employees, "employeeID", "fullEmployeeName");
+            employees = new SelectList(employees.Where(x => x.Value != empID).ToList(), "Value", "Text");
+            ViewBag.employeeID = employees;
+
             return View();
         }
 
@@ -69,7 +75,11 @@ namespace Group5Project.Controllers
             }
 
             //var employees = db.Employees.OrderBy(c => c.employeeLastName).ThenBy(c => c.employeeFirstName);
-            ViewBag.employeeID = new SelectList(db.Employees, "employeeID", "employeeLastName");
+            //ViewBag.employeeID = new SelectList(db.Employees, "employeeID", "employeeLastName");
+            string empID = User.Identity.GetUserId();
+            SelectList employees = new SelectList(db.Employees, "employeeID", "fullEmployeeName");
+            employees = new SelectList(employees.Where(x => x.Value != empID).ToList(), "Value", "Text");
+            ViewBag.employeeID = employees;
             return View(recognition);
         }
 

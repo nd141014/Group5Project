@@ -29,7 +29,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.employeeID)
+            @Html.DisplayFor(modelItem => item.Awardee.fullEmployeeName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.RecognitionValue)
