@@ -27,8 +27,9 @@ namespace Group5Project.Models
             [Display(Name = "Practice Responsible Stewardship")] Stewardship = 3,
             [Display(Name = "Ignite Passion for the Greater Good")] Good = 4,
             [Display(Name = "Invest in an Exceptional Culture")] Culture = 5,
-            [Display(Name = "Strive to Innovate")] Innovate = 6
-            
+            [Display(Name = "Strive to Innovate")] Innovate = 6,
+            [Display(Name = "Live a Balanced Life")] Balance = 7
+
         }
         [Display(Name = "Core Value")]
         [Range(1,6, ErrorMessage = "A core value is required")]

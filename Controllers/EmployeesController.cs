@@ -50,6 +50,32 @@ namespace Group5Project.Controllers
             {
                 return HttpNotFound();
             }
+            var rec = db.Recognitions.Where(r => r.Awardee.employeeID == id);
+            ViewBag.rec = rec.ToList();
+
+            var totalCnt = rec.Count(); //counts all the recognitions for that person
+            var rec1Cnt = rec.Where(r => r.RecognitionValue == Recognition.CoreValue.Excellence).Count();
+            // counts all the Excellence recognitions
+            // notice how the Enum values are references, class.enum.value
+            // the next two lines show another way to do the same counting
+            var rec2Cnt = rec.Count(r => r.RecognitionValue == Recognition.CoreValue.Culture);
+            var rec3Cnt = rec.Count(r => r.RecognitionValue == Recognition.CoreValue.Integrity);
+            var rec4Cnt = rec.Count(r => r.RecognitionValue == Recognition.CoreValue.Stewardship);
+            var rec5Cnt = rec.Count(r => r.RecognitionValue == Recognition.CoreValue.Good);
+            var rec6Cnt = rec.Count(r => r.RecognitionValue == Recognition.CoreValue.Innovate);
+            var rec7Cnt = rec.Count(r => r.RecognitionValue == Recognition.CoreValue.Balance);
+
+            // copy the values into the ViewBag
+
+            ViewBag.total = totalCnt;
+            ViewBag.Excellence = rec1Cnt;
+            ViewBag.Culture = rec2Cnt;
+            ViewBag.Integrity = rec3Cnt;
+            ViewBag.Stewardship = rec4Cnt;
+            ViewBag.Good = rec5Cnt;
+            ViewBag.Innovate = rec6Cnt;
+            ViewBag.Balance = rec7Cnt;
+            
             return View(employee);
         }
 
