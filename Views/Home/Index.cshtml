@@ -15,53 +15,126 @@
 
 </div>
 
+@*<h2>Leaderboard</h2><br>
+<div>
+    </div>
+    <div class="col-sm-2">
+        <span class="glyphicon glyphicon-signal logo"></span>
+    </div>*@
+
 <div id="about" class="container-fluid">
     <div class="row">
-        <div class="col-sm-8">
-            <h2>Leaderboard</h2><br>
-            
-        </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-signal logo"></span>
-        </div>
+        <div class="col-md-offset-4 text-center">
+                       <html>
+            <head>
+                <style>
+                    table, th, td {
+                        border: 1px solid black;
+                    }
+
+                    th, td {
+                        padding: 5px;
+                    }
+
+                    table#t01 tr:nth-child(even) {
+                        background-color: #ffa500;
+                    }
+
+                    table#t01 tr:nth-child(odd) {
+                        background-color: #fff;
+                    }
+                </style>
+            </head>
+            <body>
+                    <h2>Employee Leaderboard</h2>
+                    <p>Centric Consultings Top 5 Employees</p>
+                    <table style="width:100%">
+                        <table id="t01">
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Recognition Score</th>
+                                <th>Rank</th>
+                            </tr>
+                            <tr>
+                                <td>Jill</td>
+                                <td>Smith</td>
+                                <td>Recognition Score</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Eve</td>
+                                <td>Jackson</td>
+                                <td>Recognition Score</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Eve</td>
+                                <td>Jackson</td>
+                                <td>Recognition Score</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Eve</td>
+                                <td>Jackson</td>
+                                <td>Recognition Score</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Eve</td>
+                                <td>Jackson</td>
+                                <td>Recognition Score</td>
+                                <td>5</td>
+                            </tr>
+                        </table>
+                    </table>
+            </body>
+        </html>
+        @*<h2>Leaderboard</h2><br>
+
+            </div>
+                    <div class="col-sm-4">
+                        <span class="glyphicon glyphicon-signal logo"></span>
+                    </div>*@
     </div>
+</div>
 </div>
 
 @*<div class="container-fluid bg-grey">
-    <div class="row">
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-globe logo slideanim"></span>
+        <div class="row">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-globe logo slideanim"></span>
+            </div>
+            <div class="col-sm-8">
+                <h2>Social Media</h2><br>
+
+            <p><a class="btn btn-warning" href="https://twitter.com/centric">Twitter &raquo;</a></p>
+            <p><a class="btn btn-warning" href="https://facebook.com/CentricConsultingNational">Facebook &raquo;</a></p>
+            <p><a class="btn btn-warning" href="https://linkedin.com/company/centric-consulting">LinkedIn &raquo;</a></p>
+            <p><a class="btn btn-warning" href="https://instagram.com/centricconsulting/">Instagram &raquo;</a></p>
+            </div>
         </div>
-        <div class="col-sm-8">
-            <h2>Social Media</h2><br>
-            
-        <p><a class="btn btn-warning" href="https://twitter.com/centric">Twitter &raquo;</a></p>
-        <p><a class="btn btn-warning" href="https://facebook.com/CentricConsultingNational">Facebook &raquo;</a></p>
-        <p><a class="btn btn-warning" href="https://linkedin.com/company/centric-consulting">LinkedIn &raquo;</a></p>
-        <p><a class="btn btn-warning" href="https://instagram.com/centricconsulting/">Instagram &raquo;</a></p>
+    </div>
+
+    @*<div class="row">
+        <div class="col-md-4">
+            <h2>Leaderboard</h2>
+            <p>
+
+            </p>
+
         </div>
-    </div>
-</div>
+        <div class="col-md-4">
+            <h2>Social Media</h2>
 
-@*<div class="row">
-    <div class="col-md-4">
-        <h2>Leaderboard</h2>
-        <p>
+            <p><a class="btn btn-warning" href="https://twitter.com/centric">Twitter &raquo;</a></p>
+            <p><a class="btn btn-warning" href="https://facebook.com/CentricConsultingNational">Facebook &raquo;</a></p>
+            <p><a class="btn btn-warning" href="https://linkedin.com/company/centric-consulting">LinkedIn &raquo;</a></p>
+            <p><a class="btn btn-warning" href="https://instagram.com/centricconsulting/">Instagram &raquo;</a></p>
 
-        </p>
+            <a href="#" class="fa fa-facebook"></a> <a href="#" class="fa fa-twitter"></a> <a href="#" class="fa fa-instagram"></a> <a href="#" class="fa fa-linkedin"></a>
 
-    </div>
-    <div class="col-md-4">
-        <h2>Social Media</h2>
-
-        <p><a class="btn btn-warning" href="https://twitter.com/centric">Twitter &raquo;</a></p>
-        <p><a class="btn btn-warning" href="https://facebook.com/CentricConsultingNational">Facebook &raquo;</a></p>
-        <p><a class="btn btn-warning" href="https://linkedin.com/company/centric-consulting">LinkedIn &raquo;</a></p>
-        <p><a class="btn btn-warning" href="https://instagram.com/centricconsulting/">Instagram &raquo;</a></p>
-
-        <a href="#" class="fa fa-facebook"></a> <a href="#" class="fa fa-twitter"></a> <a href="#" class="fa fa-instagram"></a> <a href="#" class="fa fa-linkedin"></a>
-
-    </div>
+        </div>
 
 
-</div>*@
+    </div>*@
