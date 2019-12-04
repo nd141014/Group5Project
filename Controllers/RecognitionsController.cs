@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using Group5Project.DAL;
 using Group5Project.Models;
 using Microsoft.AspNet.Identity;
+using System.Net;
+using System.Net.Mail;
 
 namespace Group5Project.Controllers
 {
@@ -22,7 +24,7 @@ namespace Group5Project.Controllers
         public ActionResult Index()
         {
             var EData = db.Recognitions.Include(e => e.RecognizingEmployee).Include(e => e.Awardee).ToList();
-            
+           
             
             
 
@@ -62,6 +64,8 @@ namespace Group5Project.Controllers
             employees = new SelectList(employees.Where(x => x.Value != empID).ToList(), "Value", "Text");
             ViewBag.employeeID = employees;
 
+
+
             return View();
         }
 
@@ -76,10 +80,33 @@ namespace Group5Project.Controllers
             {
                 Guid employeeID;
                 Guid.TryParse(User.Identity.GetUserId(), out employeeID);
+                string email = User.Identity.GetUserName();
                 recognition.RecognizeeEmployeeID = employeeID;
                 db.Recognitions.Add(recognition);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                SmtpClient myClient = new SmtpClient();
+                myClient.Credentials = new NetworkCredential("AuthorizedUser", "UserPassword");
+                MailMessage myMessage = new MailMessage();
+                MailAddress from = new MailAddress("centricconsulting@centric.com", "SysAdmin");
+                myMessage.From = from;
+                myMessage.To.Add(email);
+                myMessage.Subject = "You've been recognized!";
+                myMessage.Body = "Congratulations! One of your colleagues has recognized you for meeting a Centric Consulting Core Value! Please go to cob.ohio.edu/mis4200Team5/ to see the recognition.";
+
+
+                try
+                {
+                    myClient.Send(myMessage);
+                    TempData["mailError"] = "";
+                }
+                catch (Exception ex)
+                {
+                    TempData["mailError"] = ex.Message;
+
+                }
+                return View();
+               
             }
 
             //var employees = db.Employees.OrderBy(c => c.employeeLastName).ThenBy(c => c.employeeFirstName);

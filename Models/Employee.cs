@@ -24,10 +24,10 @@ namespace Group5Project.Models
         [StringLength(50)]
         public string employeeLastName { get; set; }
         [Display(Name = "Employee Full Name")]
-        
-        
 
         public string fullEmployeeName { get { return employeeLastName + ", " + employeeFirstName; } }
+        
+
         
 
         public enum BusinessUnit

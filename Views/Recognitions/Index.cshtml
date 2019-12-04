@@ -3,45 +3,60 @@
 @{
     ViewBag.Title = "Index";
 }
+<h2>Email test results</h2>
+@{
+    if (TempData["mailError"] != null && TempData["mailError"] != "")
+    {
+        <h3>
+            The following error occurred while trying to send the email message:
+            @TempData["mailError"].ToString()
+        </h3>
+    }
+    else
+    {
+        <h4>Email sent</h4>
+        }
+    }
 
-<h2>Index</h2>
+    <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            Recognized Employee
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RecognitionValue)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.recognitionDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RecognizeeEmployeeID)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Recognized Employee
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecognitionValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.recognitionDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecognizeeEmployeeID)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Awardee.fullEmployeeName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecognitionValue)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.recognitionDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RecognizingEmployee.fullEmployeeName)
-        </td>
-        
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Awardee.fullEmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecognitionValue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.recognitionDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RecognizingEmployee.fullEmployeeName)
+                </td>
 
-</table>
+            </tr>
+        }
+
+    </table>
