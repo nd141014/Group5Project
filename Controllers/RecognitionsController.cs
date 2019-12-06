@@ -86,7 +86,7 @@ namespace Group5Project.Controllers
                 db.SaveChanges();
 
                 SmtpClient myClient = new SmtpClient();
-                myClient.Credentials = new NetworkCredential("lm739314@ohio.edu", "Ohiobobcats227!");
+                myClient.Credentials = new NetworkCredential("sm126215@ohio.edu", "Snm97oh1!!");
                 MailMessage myMessage = new MailMessage();
                 MailAddress from = new MailAddress("centricconsulting@centric.com", "SysAdmin");
                 myMessage.From = from;
