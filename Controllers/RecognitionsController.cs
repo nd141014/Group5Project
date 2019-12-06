@@ -86,7 +86,7 @@ namespace Group5Project.Controllers
                 db.SaveChanges();
 
                 SmtpClient myClient = new SmtpClient();
-                myClient.Credentials = new NetworkCredential("AuthorizedUser", "UserPassword");
+                myClient.Credentials = new NetworkCredential("lm739314@ohio.edu", "Ohiobobcats227!");
                 MailMessage myMessage = new MailMessage();
                 MailAddress from = new MailAddress("centricconsulting@centric.com", "SysAdmin");
                 myMessage.From = from;
@@ -105,6 +105,10 @@ namespace Group5Project.Controllers
                     TempData["mailError"] = ex.Message;
 
                 }
+                string empIDx = User.Identity.GetUserId();
+                SelectList employeesx = new SelectList(db.Employees, "employeeID", "fullEmployeeName");
+                employeesx = new SelectList(employeesx.Where(x => x.Value != empIDx).ToList(), "Value", "Text");
+                ViewBag.employeeID = employeesx;
                 return View();
                
             }
