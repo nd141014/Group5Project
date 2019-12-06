@@ -105,6 +105,10 @@ namespace Group5Project.Controllers
                     TempData["mailError"] = ex.Message;
 
                 }
+                string empIDx = User.Identity.GetUserId();
+                SelectList employeesx = new SelectList(db.Employees, "employeeID", "fullEmployeeName");
+                employeesx = new SelectList(employeesx.Where(x => x.Value != empIDx).ToList(), "Value", "Text");
+                ViewBag.employeeID = employeesx;
                 return View();
                
             }
