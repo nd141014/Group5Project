@@ -65,7 +65,7 @@ namespace Group5Project.Controllers
             ViewBag.employeeID = employees;
 
 
-
+            TempData["mailError"] = "";
             return View();
         }
 
