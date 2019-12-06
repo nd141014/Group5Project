@@ -204,10 +204,17 @@
     <Content Include="images\Cincinnati.jfif" />
     <Content Include="images\Cleveland.jfif" />
     <Content Include="images\Columbus.jfif" />
+    <Content Include="images\diversity-inclusion-overlapping.jpg" />
+    <Content Include="images\download.jfif" />
+    <Content Include="images\download1.jfif" />
     <Content Include="images\India.jfif" />
     <Content Include="images\Indianapolis.jfif" />
     <Content Include="images\Louisville.jfif" />
     <Content Include="images\Miami.jfif" />
+    <Content Include="images\Microsoft_TeamsEbook_WebPage_Feat-1680x750.jpg" />
+    <Content Include="images\Office.jfif" />
+    <Content Include="images\Office2.jfif" />
+    <Content Include="images\People.jfif" />
     <Content Include="images\StLouis.jfif" />
     <Content Include="images\Tampa2.jfif" />
     <Content Include="Scripts\bootstrap.js" />
