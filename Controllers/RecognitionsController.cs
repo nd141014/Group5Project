@@ -65,7 +65,7 @@ namespace Group5Project.Controllers
             ViewBag.employeeID = employees;
 
 
-          
+     
             return View();
         }
 
@@ -106,7 +106,7 @@ namespace Group5Project.Controllers
                 {
                     myClient.Send(myMessage);
                     return RedirectToAction("Index", "Recognitions");
-                    TempData["mailError"] = "sent";
+                    
 
                 }
                 catch (Exception ex)
