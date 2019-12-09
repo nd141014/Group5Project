@@ -26,9 +26,10 @@ namespace Group5Project.Models
         [Display(Name = "Employee Full Name")]
 
         public string fullEmployeeName { get { return employeeLastName + ", " + employeeFirstName; } }
-        
 
-        
+        [Display(Name="Employee Email")]
+        public string email { get; set; }
+
 
         public enum BusinessUnit
         {

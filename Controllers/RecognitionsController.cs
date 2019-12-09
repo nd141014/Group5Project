@@ -76,20 +76,26 @@ namespace Group5Project.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "recognitionId,employeeID,RecognitionValue,recognitionDescription,recognitionPoints,RecognizeeEmployeeID")] Recognition recognition)
         {
-            TempData["mailError"] = "not sent or sqaved";
+            TempData["mailError"] = "not sent or saved";
             if (ModelState.IsValid)
             {
+                var awardee = recognition.employeeID;
+                
                 Guid employeeID;
                 Guid.TryParse(User.Identity.GetUserId(), out employeeID);
-                string email = User.Identity.GetUserName();
-                recognition.RecognizeeEmployeeID = employeeID;
+                recognition.employeeID = employeeID;
+                recognition.RecognizeeEmployeeID = awardee;
+                string email;
+                var rec = db.Employees.Find(recognition.RecognizeeEmployeeID);
+                email = rec.email;
+              //  recognition.RecognizeeEmployeeID = employeeID;
                 db.Recognitions.Add(recognition);
                 db.SaveChanges();
 
                 SmtpClient myClient = new SmtpClient();
                 myClient.Credentials = new NetworkCredential("sm126215@ohio.edu", "Snm97oh1!!");
                 MailMessage myMessage = new MailMessage();
-                MailAddress from = new MailAddress("centricconsulting@centric.com", "SysAdmin");
+                MailAddress from = new MailAddress("lm739314@ohio.edu", "SysAdmin");
                 myMessage.From = from;
                 myMessage.To.Add(email);
                 myMessage.Subject = "You've been recognized!";
