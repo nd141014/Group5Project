@@ -65,7 +65,7 @@ namespace Group5Project.Controllers
             ViewBag.employeeID = employees;
 
 
-            TempData["mailError"] = "create get";
+          
             return View();
         }
 
@@ -76,7 +76,7 @@ namespace Group5Project.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "recognitionId,employeeID,RecognitionValue,recognitionDescription,recognitionPoints,RecognizeeEmployeeID")] Recognition recognition)
         {
-            TempData["mailError"] = "not sent or saved";
+           
             if (ModelState.IsValid)
             {
                 var awardee = recognition.employeeID;

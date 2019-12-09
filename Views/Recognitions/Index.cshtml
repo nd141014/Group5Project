@@ -3,22 +3,22 @@
 @{
     ViewBag.Title = "Index";
 }
-<h2>Email test results</h2>
+@*<h2>Email test results</h2>*@
 @{
-    if (TempData["mailError"] != null && TempData["mailError"] != "")
+    @*if (TempData["mailError"] != null && TempData["mailError"] != "")
     {
         <h3>
             The following error occurred while trying to send the email message:
             @TempData["mailError"].ToString()
         </h3>
-    }
+    }*@
     @*else
     {
         <h4>Email sent</h4>
         }*@
     }
 
-    <h2>Index</h2>
+    <h2>Recognitions</h2>
 
     <p>
         @Html.ActionLink("Create New", "Create")

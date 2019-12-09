@@ -32,7 +32,7 @@ namespace Group5Project.Models
 
         }
         [Display(Name = "Core Value")]
-        [Range(1,6, ErrorMessage = "A core value is required")]
+        [Range(1,7, ErrorMessage = "A core value is required")]
         public CoreValue RecognitionValue { get; set; }
 
 
